@@ -9,12 +9,14 @@ import useStore from '../../store/useStore';
 import { CATEGORIES } from '../../data/mockData';
 import { formatDateInput } from '../../utils/formatters';
 
+const today = new Date().toISOString().split('T')[0];
+
 const EMPTY_FORM = {
   description: '',
   amount: '',
   category: 'Salary',
   type: 'income',
-  date: new Date().toISOString().split('T')[0],
+  date: today,
 };
 
 export default function TransactionModal({ existing, onClose }) {
@@ -155,6 +157,7 @@ export default function TransactionModal({ existing, onClose }) {
               <input
                 id="txn-date"
                 type="date"
+                max={today}
                 className={`input ${errors.date ? 'input-error' : ''}`}
                 value={form.date}
                 onChange={(e) => set('date', e.target.value)}

@@ -131,7 +131,20 @@ tbody tr:hover .txn-actions { opacity: 1; }
 
 /* Responsive */
 @media (max-width: 650px) {
-  .txn-filters { flex-direction: column; }
+  .txn-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter-group {
+    width: 100% !important;
+    min-width: unset !important;
+    flex: unset !important;
+  }
+  .filter-group .select,
+  .filter-group .input,
+  .filter-group .input-group {
+    width: 100%;
+  }
   .filter-spacer { display: none; }
   .form-row { flex-direction: column; }
 }
