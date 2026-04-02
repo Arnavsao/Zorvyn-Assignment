@@ -1,0 +1,137 @@
+/* Transactions.css — shared styles for all transaction components */
+
+/* ─── Modal extras ────────────────────────────────── */
+.type-toggle {
+  display: flex;
+  gap: 8px;
+}
+.type-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.type-btn:hover { background: var(--bg-hover); }
+.type-btn.active.income  { background: var(--success-light); color: var(--success); border-color: var(--success); }
+.type-btn.active.expense { background: var(--danger-light);  color: var(--danger);  border-color: var(--danger); }
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+.field-error {
+  color: var(--danger);
+  font-size: 12px;
+  margin-top: 4px;
+}
+.input-error { border-color: var(--danger) !important; }
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* ─── Filters ─────────────────────────────────────── */
+.txn-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.filter-group .form-label { margin-bottom: 0; }
+.filter-spacer { flex: 1; }
+
+/* ─── Table toolbelt ──────────────────────────────── */
+.txn-table-wrapper { padding: 0; }
+.txn-table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.txn-count {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Category dot */
+.cat-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+.cat-cell {
+  display: flex;
+  align-items: center;
+}
+
+/* Action buttons in table */
+.txn-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+tbody tr:hover .txn-actions { opacity: 1; }
+
+/* Export dropdown */
+.export-wrap { position: relative; }
+.export-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  z-index: 100;
+  overflow: hidden;
+  min-width: 160px;
+  animation: slideUp 0.15s ease;
+}
+.export-btn-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: background var(--transition);
+}
+.export-btn-item:hover { background: var(--bg-elevated); }
+
+/* Responsive */
+@media (max-width: 650px) {
+  .txn-filters { flex-direction: column; }
+  .filter-spacer { display: none; }
+  .form-row { flex-direction: column; }
+}
