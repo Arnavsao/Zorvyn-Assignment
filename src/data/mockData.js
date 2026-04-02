@@ -4,8 +4,6 @@
  * Includes transactions, monthly aggregates, and category metadata.
  */
 
-import { v4 as uuid } from 'crypto';
-
 export const CATEGORIES = [
   'Salary',
   'Freelance',
