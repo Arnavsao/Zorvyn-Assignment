@@ -1,0 +1,111 @@
+/* Insights.css */
+
+.insight-kpi-card {
+  padding: 20px;
+  animation: slideUp 0.4s ease both;
+}
+.insight-kpi-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.insight-kpi-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ic, var(--accent));
+  background: color-mix(in srgb, var(--ic, var(--accent)) 12%, transparent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.insight-kpi-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+.insight-kpi-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+}
+.insight-kpi-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Alert */
+.insight-alert {
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.insight-alert.alert-warn {
+  border-left: 4px solid var(--warning);
+  color: var(--warning);
+}
+.insight-alert.alert-ok {
+  border-left: 4px solid var(--success);
+  color: var(--success);
+}
+.alert-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.alert-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Charts row */
+.insights-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Category bars */
+.category-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 4px;
+}
+.cat-bar-row {}
+.cat-bar-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.cat-bar-name {
+  flex: 1;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.cat-bar-amount {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.cat-bar-pct {
+  color: var(--text-muted);
+  font-size: 12px;
+  min-width: 38px;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .insights-charts-row {
+    grid-template-columns: 1fr;
+  }
+}
